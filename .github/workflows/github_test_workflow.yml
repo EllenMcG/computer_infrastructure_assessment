@@ -6,5 +6,5 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      name: Output Date
-      run: date
+      - name: Output Date
+        run: date
