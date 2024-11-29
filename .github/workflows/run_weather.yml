@@ -17,10 +17,10 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Make script executable
-        run: chmod u+x ./weather_updated.sh
+        run: chmod u+x ./weather.sh # not strictly necessary
 
       - name: Run weather script
-        run: ./weather_updated.sh
+        run: ./weather.sh
 
       - name: Configure Git
         run: |
