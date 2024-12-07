@@ -5,7 +5,7 @@ This Github repo contains the assessment completed as part of the Computer Infra
 ## **Tasks**
 
 There is a series of nine tasks completed (shown below) to work through various aspects of computer architecture. 
-- *Task 1: Create Directory Strucutre* - Using the command line, create a directory named `data` at the root of your repository. Inside `data`, create two subdirectories: `timestamps` and `weather`.
+- *Task 1: Create Directory  Structure* - Using the command line, create a directory named `data` at the root of your repository. Inside `data`, create two subdirectories: `timestamps` and `weather`.
 - *Task 2: Timestamps* - Navigate to the `data/timestamps directory`. Use the `date` command to output the current date and time, appending the output to a file named `now.txt`. Make sure to use the `>>` operator to append (not overwrite) the file. Repeat this step ten times, then use the `more` command to verify that `now.txt` has the expected content.
 - *Task 3: Formatting Timestamps* -  Run the `date` command again, but this time format the output using `YYYYmmdd_HHMMSS` (e.g., `20261114_130003` for 1:00:03 PM on November 14, 2026). Refer to the `date` man page (using `man date`) for more formatting options. (Press q to exit the man page). Append the formatted output to a file named `formatted.txt`.
 - *Task 4: Create timestamped files* - Use the `touch` command to create an empty file with a name in the `YYYYmmdd_HHMMSS.txt` format. 
@@ -26,30 +26,74 @@ As part of the project, the shell script *weather.sh* will be automated to push 
 - *6 Commit and Push Changes Back to the Repository* - Finally, configure the workflow to commit the new weather data and push those changes back to the `computer_infrastructure_assessment` repository.
 - *7 Test the Workflow* - Commit and push the workflow to the `computer_infrastructure_assessment`  repository. Check the logs in GitHub to ensure that the `weather.sh` script runs correctly, that new data is being committed.
 
-## Development and Environment
-Both the tasks and projected were completed in *Visual Studio Code* using python (V3.11). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda. 
+## **Development and Environment**
+Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda. 
 
-## Repositry stucture 
-This repositry has the below structure 
+## **Repository structure** 
+This repository has the below structure 
 
-    -.github
+```
+/computer_infrastructure_assessment
+├── /.github/           
+│   ├── /workflows/         # contains run_weather.yml workflow file
+├── /data/                  # data files generated in weather.ipynb
+│   ├── /timestamps/        # timestamp files generated in weather.ipynb
+│   └── /weather/           # weather files generated in weather.ipynb
+├── .gitignore              # .gitignore file
+├── README.md               # README.md file 
+├── requirements.txt        # python dependencies
+├── weather.ipynb           # main Jupyter Notebook of this module  
+└── weathersh               # Executable shell file 
+```
 
-        - workflows
 
-            run_weather.yml
-        
-    -data
+## **Running this repository**
+This repo can be run in two ways;
+- Running locally
+- Github codespaces
 
-        - timestamps (contains various .txt file)
+### **Running this repository locally** 
 
-        - weather (contains various files in `YYYYmmdd_HHMMSS.json` format)
+To be run locally, the user must have [`Anaconda`](https://www.anaconda.com/) (or similar) and an IDE ([`Visual Studio Code`](https://code.visualstudio.com/) was used for this project). 
 
-    README.md
+1. Clone the repository
+```
+$ git clone https://github.com/EllenMcG/computer_infrastructure_assessment.git
+```
 
-    weather.ipynb
+2. Open `weather.ipynb` in `Visual Studio Code` and run
 
-    weather.sh
+3. To run `weather.sh` the user must make the file executable as shown below
 
-## Running this repositry
-This repositry can be [cloned](https://github.com/EllenMcG/computer_infrastructure_assessment.git) and ran in a similar IDE. 
+```
+chmod u+x ./weather.sh
+./weather.sh 
+```
 
+#### **Dependencies** 
+Note: if user is not using an IDE but just using python then the dependencies need to be installed first listed in the `requirements.txt` file below.
+
+``` 
+$ pip install -r requirements.txt
+```
+
+An alternative way to install dependencies not using the `requirements.txt` file is shown below; 
+
+```
+$ pip install os pandas
+```
+
+### **Running this repositry on Github Codespaces**
+
+GitHub Codespaces is an online IDE that allows you to run your project in a cloud-based environment without needing to set up anything on your local machine. Here's how to get started:
+
+1. Open the repository in GitHub Codespaces:
+- Go to the repository's page on GitHub.
+- Click the green Code button.
+- Select Open with Codespaces.
+
+2. Start the Jupyter Notebook in Codespaces:
+Once your Codespace is ready:
+- Open the integrated terminal in GitHub Codespaces.
+- Make sure your virtual environment is activated (if you're using one). If not, you can skip this step.
+- Open `weather.ipynb` in `Visual Studio Code` and run 
