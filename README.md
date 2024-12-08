@@ -15,6 +15,10 @@ There is a series of nine tasks completed (shown below) to work through various 
 - *Task 8: Notebook* - Create a notebook called [`weather.ipynb`](https://github.com/EllenMcG/computer_infrastructure_assessment/blob/main/weather.ipynb) at the root of your repository. In this notebook, write a brief report explaining how you completed Tasks 1 to 7. Provide short descriptions of the commands used in each task and explain their role in completing the tasks.
 - *Task 9: pandas* - In the [`weather.ipynb`](https://github.com/EllenMcG/computer_infrastructure_assessment/blob/main/weather.ipynb) notebook, use the `pandas` function `read_json()` to load in any one of the weather data files you have downloaded with your script. Examine and summarize the data. Use the information provided by data.gov.ie to write a short explanation of what the data set contains.
 
+**Note:** while Athenry is used as the weather station, there are a total of 20 automatic monitoring stations in Ireland used by Mét Eireann showing below. 
+
+![Map of Ireland showing Mét Eireann Automatic Weather Stations](https://www.met.ie/cms/assets/uploads/2020/10/synoptic.png)
+
 ## **Project**
 
 As part of the project, the shell script *weather.sh* will be automated to push data to the `data/weather` directory in a Github Action in the below steps. 
@@ -80,7 +84,7 @@ $ pip install -r requirements.txt
 An alternative way to install dependencies not using the `requirements.txt` file is shown below; 
 
 ```
-$ pip install os pandas
+$ pip install os pandas datetime
 ```
 
 ### **Running this repositry on Github Codespaces**
