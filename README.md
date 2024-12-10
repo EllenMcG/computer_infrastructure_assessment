@@ -30,6 +30,22 @@ As part of the project, the shell script *weather.sh* will be automated to push 
 - *6 Commit and Push Changes Back to the Repository* - Finally, configure the workflow to commit the new weather data and push those changes back to the `computer_infrastructure_assessment` repository.
 - *7 Test the Workflow* - Commit and push the workflow to the `computer_infrastructure_assessment`  repository. Check the logs in GitHub to ensure that the `weather.sh` script runs correctly, that new data is being committed.
 
+**Note:** The script has being running for nearly two weeks, but has broken due to so many requests on Mét Eireanns API which returns the below error 
+
+![workflow error message](img/error.png)
+
+The `run_weather.yml` file has being changed to change the `cron` command from 
+
+```
+- cron: '0 10 * * *'  # Runs at 10 AM UTC every day
+```
+
+to 
+```
+- cron: '45 11 * * *'  # Runs at 11:45 AM UTC every day
+```
+
+
 ## **Development and Environment**
 Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda. 
 
