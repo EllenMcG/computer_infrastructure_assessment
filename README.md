@@ -45,6 +45,7 @@ to
 - cron: '45 11 * * *'  # Runs at 11:45 AM UTC every day
 ```
 
+Manually running the workflow showed it worked, but needs to be checked after it has run a few days. The weather file with no data within the `.json` file was deleted from `data/weather` (`20241210_101913.json`).
 
 ## **Development and Environment**
 Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda. 
