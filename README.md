@@ -62,7 +62,6 @@ When the action was run manually the random code looks like the below in the log
 
 ![workflow log message](img/log.png)
 
-
 ## **Development and Environment**
 Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda. 
 
