@@ -21,7 +21,7 @@ jobs:
 
       - name: Random sleep
         run: |
-          RANDOM_SLEEP=$((RANDOM % 21)) # 0-20 minutes
+          RANDOM_SLEEP=$((RANDOM % 121)) # 0-120 minutes
           echo "Sleeping for $RANDOM_SLEEP minutes..."
           SLEEP_TIME=$((RANDOM_SLEEP * 60)) # convert to minutes
           sleep $SLEEP_TIME
