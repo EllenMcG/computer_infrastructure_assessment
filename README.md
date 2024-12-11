@@ -45,7 +45,7 @@ to
 - cron: '45 11 * * *'  # Runs at 11:45 AM UTC every day
 ```
 
-Manually running the workflow showed it worked. The weather file with no data within the `.json` file was deleted from `data/weather` (`20241210_101913.json`). While this would work for a few days it may be blocked by the Mét Eireann API so to counteract this a random sleep was used before running `weather.sh`. The [RANDOM](https://www.geeksforgeeks.org/random-shell-variable-in-linux-with-examples/) shell variabe returns a number between 0–32767, however it was not seeded with an initial value. The value is between 0 and 120 (0-121) and the value is multiplied to return minutes so that the program will sleep for X minutes before running the `weather.sh` shell script with the below code added to the `run_weather.yml` file.
+Manually running the workflow showed it worked. The weather file with no data within the `.json` file was deleted from `data/weather` (`20241210_101913.json`). While this would work for a few days it may be blocked by the Mét Eireann API so to counteract this a random sleep was used before running `weather.sh`. The [RANDOM](https://www.geeksforgeeks.org/random-shell-variable-in-linux-with-examples/) shell variabe returns a number between 0–32767, however it was not seeded with an initial value. The value is between 0 and 120 (0-121) and the value is multiplied to return minutes so that the program will sleep for X minutes using the `sleep` command before running the `weather.sh` shell script with the below code added to the `run_weather.yml` file.
 
 
 ```
