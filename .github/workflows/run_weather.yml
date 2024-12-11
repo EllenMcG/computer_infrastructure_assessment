@@ -20,13 +20,12 @@ jobs:
         run: chmod u+x ./weather.sh # not strictly necessary
 
       - name: Random sleep
-        run: # Generate a random number between 0 and 2 (hours)
-        RANDOM_SLEEP=$((RANDOM % 3))
-        echo "Sleeping for $RANDOM_SLEEP hours..."
-        # Convert the sleep time to seconds
-        SLEEP_TIME=$((RANDOM_SLEEP * 3600))
+        run: |
+        RANDOM_SLEEP=$((RANDOM % 21)) # 0-20 minutes
+        echo "Sleeping for $RANDOM_SLEEP minutes..."
+        SLEEP_TIME=$((RANDOM_SLEEP * 60)) # convert to minutes
         sleep $SLEEP_TIME
-        echo "Awake: Running the shell script now."
+        echo "Awake! Running the shell script now."
 
       - name: Run weather script
         run: ./weather.sh
