@@ -19,6 +19,15 @@ jobs:
       - name: Make script executable
         run: chmod u+x ./weather.sh # not strictly necessary
 
+      - name: Random sleep
+        run: # Generate a random number between 0 and 2 (hours)
+        RANDOM_SLEEP=$((RANDOM % 3))
+        echo "Sleeping for $RANDOM_SLEEP hours..."
+        # Convert the sleep time to seconds
+        SLEEP_TIME=$((RANDOM_SLEEP * 3600))
+        sleep $SLEEP_TIME
+        echo "Awake: Running the shell script now."
+
       - name: Run weather script
         run: ./weather.sh
 
