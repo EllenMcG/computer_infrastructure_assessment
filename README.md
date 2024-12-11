@@ -45,7 +45,23 @@ to
 - cron: '45 11 * * *'  # Runs at 11:45 AM UTC every day
 ```
 
-Manually running the workflow showed it worked, but needs to be checked after it has run a few days. The weather file with no data within the `.json` file was deleted from `data/weather` (`20241210_101913.json`).
+Manually running the workflow showed it worked. The weather file with no data within the `.json` file was deleted from `data/weather` (`20241210_101913.json`). While this would work for a few days it may be blocked by the Mét Eireann API so to counteract this a random sleep was used before running `weather.sh`. The [RANDOM](https://www.geeksforgeeks.org/random-shell-variable-in-linux-with-examples/) shell variabe returns a number between 0–32767, however it was not seeded with an initial value. The value is between 0 and 120 (0-121) and the value is multiplied to return minutes so that the program will sleep for X minutes before running the `weather.sh` shell script with the below code added to the `run_weather.yml` file.
+
+
+```
+      - name: Random sleep
+        run: |
+          RANDOM_SLEEP=$((RANDOM % 121)) # 0-120 minutes
+          echo "Sleeping for $RANDOM_SLEEP minutes..."
+          SLEEP_TIME=$((RANDOM_SLEEP * 60)) # convert to minutes
+          sleep $SLEEP_TIME
+          echo "Awake! Running the shell script now."
+```
+
+When the action was run manually the random code looks like the below in the log file.
+
+![workflow log message](img/log.png)
+
 
 ## **Development and Environment**
 Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda. 
@@ -60,6 +76,7 @@ This repository has the below structure
 ├── /data/                  # data files generated in weather.ipynb
 │   ├── /timestamps/        # timestamp files generated in weather.ipynb
 │   └── /weather/           # weather files generated in weather.ipynb
+├── /img                    # directory of image files
 ├── .gitignore              # .gitignore file
 ├── README.md               # README.md file 
 ├── requirements.txt        # python dependencies
