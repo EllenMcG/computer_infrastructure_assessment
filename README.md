@@ -62,6 +62,11 @@ When the action was run manually the random code looks like the below in the log
 
 ![workflow log message](img/log.png)
 
+Reviewing the last few days of workflows, showed that the all ran (and successfully pulled the data and did not return an error). Using `RANDOM` to generate a random number between 0-120 minutes to sleep for before running `weather.sh` worked out well (Worflow # 31 and # 32 were ran manually for testing). 
+
+
+![Github Workflow log](img/workflows.png)
+
 ## **Development and Environment**
 Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda. 
 
