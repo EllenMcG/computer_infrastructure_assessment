@@ -68,7 +68,7 @@ Reviewing the last few days of workflows, showed that the all ran (and successfu
 ![Github Workflow log](img/workflows.png)
 
 ## **Development and Environment**
-Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda, however the `requirements.txt` file shows the python modules used as part of this assessment. however the `requirements.txt` file shows the python modules used as part of this assessment. 
+Both the tasks and projected were completed in [`Visual Studio Code`](https://code.visualstudio.com/) using python (V3.11) though [`Anaconda`](https://www.anaconda.com/). [ChatGPT](https://chatgpt.com/) was used to assist with writing the workflow file for the project. No additional python modules needed as this was done using modules available within Anaconda, however the `requirements.txt` file shows the python modules used as part of this assessment.
 
 ## **Repository structure** 
 This repository has the below structure 
