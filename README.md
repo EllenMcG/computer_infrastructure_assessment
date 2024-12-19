@@ -1,6 +1,6 @@
 # Computer infrastructure Assessment
 
-This Github repo contains the assessment completed as part of the Computer Infrastructure module done as part of the Higher Diploma in Computing (Data Analysis) at ATU Galway. The assessment is made up of two components, namely the project and tasks.
+This Github repo contains the assessment completed as part of the Computer Infrastructure module done as part of the Higher Diploma in Computing (Data Analysis) at ATU Galway. The assessment is made up of two components, namely the project and tasks, which is described below in more in their respective sections. 
 
 ## **Tasks**
 
@@ -30,7 +30,8 @@ As part of the project, the shell script *weather.sh* will be automated to push 
 - *6 Commit and Push Changes Back to the Repository* - Finally, configure the workflow to commit the new weather data and push those changes back to the `computer_infrastructure_assessment` repository.
 - *7 Test the Workflow* - Commit and push the workflow to the `computer_infrastructure_assessment`  repository. Check the logs in GitHub to ensure that the `weather.sh` script runs correctly, that new data is being committed.
 
-**Note:** The script has being running for nearly two weeks, but has broken due to so many requests on Mét Eireanns API which returns the below error 
+### **Project Update - `weather.sh` script failing** 
+The script has being running for nearly two weeks, but has broken due to so many requests on Mét Eireanns API which returns the below error 
 
 ![workflow error message](img/error.png)
 
@@ -85,7 +86,7 @@ This repository has the below structure
 ├── README.md               # README.md file 
 ├── requirements.txt        # python dependencies
 ├── weather.ipynb           # main Jupyter Notebook of this module  
-└── weathersh               # Executable shell file 
+└── weather.sh               # Executable shell file 
 ```
 
 
